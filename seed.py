@@ -78,7 +78,7 @@ projects = [
         "category": "build",
         "subcategory": None,
         "title": "Floating Bed",
-        "text": "Floating Bed"
+        "text": "Floating Bed",
         "image_link": "https://i.etsystatic.com/52818188/r/il/6b53c6/6258917539/il_fullxfull.6258917539_ou0y.jpg" # TODO replaces
     }
 ]
