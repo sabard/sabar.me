@@ -1,6 +1,7 @@
-from flask import escape, request, render_template, jsonify
+from flask import request, render_template, jsonify
 from flask_cors import CORS
 from flask_graphql import GraphQLView
+from markupsafe import escape
 
 from . import app
 from .graphql_schemas import schema

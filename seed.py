@@ -1,3 +1,4 @@
+from sabar_me import app
 from sabar_me.models import db, create_project
 
 projects = [
@@ -42,6 +43,8 @@ projects = [
         "image_link": "/static/images/cloud.png"
     },
 
+    # writing?
+
     # builds
     {
         "category": "build", # TODO should be enum?
@@ -70,14 +73,22 @@ projects = [
         "title": "3D Printer",
         "text": "Reprap Prusa Mendel i3",
         "image_link": "https://reprap.org/mediawiki/images/5/55/Prusai3-metalframe.jpg"
+    },
+    {
+        "category": "build",
+        "subcategory": None,
+        "title": "Floating Bed",
+        "text": "Floating Bed"
+        "image_link": "https://i.etsystatic.com/52818188/r/il/6b53c6/6258917539/il_fullxfull.6258917539_ou0y.jpg" # TODO replaces
     }
 ]
 
 
-created_projects = []
-for project in projects:
-    created_projects.append(create_project(project, commit=False))
+with app.app_context():
+    created_projects = []
+    for project in projects:
+        created_projects.append(create_project(project, commit=False))
 
-db.session.commit()
+    db.session.commit()
 
-print(created_projects)
+    print(created_projects)
